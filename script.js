@@ -12,5 +12,6 @@ function onReady() {
 // created a funtion that will put things in my DOM
 
 function genereteButton() {
+    $('#button').append('<div></div>')
 
 }
