@@ -17,26 +17,34 @@ let clickCount = 0;
 // hanlde click function that will deal whenever someone clicks the generate button.
  function handleClick(event) {
     console.log('Click Generate')
-
+clickCount++;
 // this funtion will add one more whenever i click the button
-$('#container').append(`
-   <div id ="container"> 
-   <button class ="yellowColor">Yellow</button>
-   <button class ="deleteIt">Delete</button>
-   </div>
-`)
+   $('#container').append(`
+      <div id ="container"> 
+      <p>${clickCount}</p>
+      <button class ="yellowColor">Yellow</button>
+      <button class ="deleteIt">Delete</button>
+      </div>
+   `)
 
     // Targeted this id to be incremented
-    clickCount++;
-    $('#clickCounter').text(clickCount).css('background-color', 'red')
-     $('#container').css('background-color', 'red')
+   //  clickCount++;
+    //
+    $('#clickCounter').text(clickCount)
+       
+       $('#container').css('background-color', 'red')
  }
-function yellowButton() {
-   $(this).parent().css('background-color', 'yellow');
+ //function for the yellow button.
+   function yellowButton() {
+      // this makes the backround to yellow.
+      $(this).parent().css('background-color', 'yellow');
 }
-clickCount--; 
-function deleteButton() {
-   $(this).parent().remove();
+// decrease whenever i click it.
+  
 
+//function that deletes the color
+   function deleteButton() {
+      $(this).parent().remove();
 
+      clickCount--;
 }
