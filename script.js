@@ -8,7 +8,7 @@ console.log('Jquery is ruuning')
  function onReady() {
     $('#button').on('click', handleClick)
     $('#container').on('click', '.yellowColor', yellowButton)
-    $('#container').on('click', '.deleteIt', yellowButton)
+    $('#container').on('click', '.deleteIt', deleteButton)
  }
 
 let clickCount = 0;
@@ -29,8 +29,14 @@ $('#container').append(`
     // Targeted this id to be incremented
     clickCount++;
     $('#clickCounter').text(clickCount).css('background-color', 'red')
-    // $('#button').css('background-color', 'red')
+     $('#container').css('background-color', 'red')
  }
 function yellowButton() {
    $(this).parent().css('background-color', 'yellow');
+}
+clickCount--; 
+function deleteButton() {
+   $(this).parent().remove();
+
+
 }
